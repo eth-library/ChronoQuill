@@ -1,15 +1,14 @@
 # ChronoQuill
 
-ChronoQuill is a pipeline for processing handwritten document images, performing HTR, layout classification, semantic segmentation, and generating refined Markdown files using zero-shot and few-shot learning.
+ChronoQuill's transformation pipeline leverages AI-powered HTR, layout classification, and few-shot learning to convert handwritten documents into structured Markdown.
 
 <div style="text-align: center;"> <img src="supplements/ChronoQuill.png" alt="Rescue Mission"> </div>
 
-## Features
-- German-optimized HTR and semantic segmentation
-- Layout classification using deep learning
-- Zero-shot and few-shot Markdown generation
-- Automated post-processing for margins
-- Batch processing with parallelization
+## Pipeline
+- HTR and semantic segmentation
+- Layout classification (Pretrained Swin Transformer)
+- Zero-shot and Few-shot Markdown generation
+- Automated post-processing
 
 ## Setup Instructions
 
@@ -59,7 +58,7 @@ Our pretrained layout classifier and few-shot samples can be downloaded [here](t
 ## License
 MIT
 
-## Acknowledgements
+## References
 - [Google GenAI](https://ai.google.dev/)
 - [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://huggingface.co/timm/swin_large_patch4_window7_224.ms_in22k)
 
