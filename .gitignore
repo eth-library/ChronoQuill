@@ -1,0 +1,12 @@
+# Ignore all contents of these folders
+models/*
+few_shot/*
+data/*
+
+# Do not ignore the folders themselves
+!models/
+!few_shot/
+!data/
+
+# Ignore environment file
+.env
