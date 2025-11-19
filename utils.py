@@ -80,6 +80,11 @@ class Layout_Classifier:
                 else:
                     labels.append('margins_right')
 
+        if len(labels) == 0:
+            raise Exception(
+                f"No labels found for {image_path}. Retrain the classifier with your documents to learn the layout first."
+            )
+
         return labels
 
 def clean_markdown_response(text):
@@ -92,7 +97,7 @@ def clean_markdown_response(text):
     Returns:
         str: Cleaned Markdown output.
     """
-    replacements = {'```': '', 'markdown': ''}
+    replacements = replacements = {'```': '','markdown': '','Ã¼': 'ü','Ã¤': 'ä','Ã¶': 'ö'}
     for old, new in replacements.items():
         text = text.replace(old, new)
     return text
