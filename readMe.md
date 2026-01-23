@@ -1,6 +1,6 @@
 # ChronoQuill
 
-ChronoQuill's transformation pipeline leverages AI-powered HTR, layout classification, and few-shot learning to convert handwritten documents into structured Markdown.
+ChronoQuill's transformation pipeline leverages AI-powered HTR, layout classification, and few-shot learning to convert handwritten documents into structured Markdown. The working paper can be accessed [here](https://www.research-collection.ethz.ch/server/api/core/bitstreams/8053d4d8-51b4-4103-8164-b5068ddb3903/content).
 
 <div style="text-align: center;"> <img src="supplements/ChronoQuill.png" alt="chronoQuill"> </div>
 
@@ -35,7 +35,7 @@ wget https://polybox.ethz.ch/index.php/s/Je9JEwST2drDp4K/download
 unzip download
 
 # Ground Truth samples for Few-Shot Learning:
-mkdir few_shot & cd few_shot/
+mkdir few_shot && cd few_shot/
 wget https://polybox.ethz.ch/index.php/s/5kSGRHYmz2m4tCE/download
 unzip download
 
