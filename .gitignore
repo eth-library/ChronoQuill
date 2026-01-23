@@ -3,6 +3,8 @@ models/*
 few_shot/*
 data/*
 
+__pycache__
+
 # Do not ignore the folders themselves
 !models/
 !few_shot/

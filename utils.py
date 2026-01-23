@@ -97,6 +97,7 @@ def clean_markdown_response(text):
     Returns:
         str: Cleaned Markdown output.
     """
+    
     replacements = replacements = {'```': '','markdown': '','Ã¼': 'ü','Ã¤': 'ä','Ã¶': 'ö'}
     for old, new in replacements.items():
         text = text.replace(old, new)
