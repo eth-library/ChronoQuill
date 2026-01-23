@@ -2,43 +2,45 @@
 
 ChronoQuill's transformation pipeline leverages AI-powered HTR, layout classification, and few-shot learning to convert handwritten documents into structured Markdown.
 
-<div style="text-align: center;"> <img src="supplements/ChronoQuill.png" alt="Rescue Mission"> </div>
-
-## Pipeline
-- HTR and semantic segmentation
-- Layout classification (Pretrained Swin Transformer)
-- Zero-shot and Few-shot Markdown generation
-- Automated post-processing
+<div style="text-align: center;"> <img src="supplements/ChronoQuill.png" alt="chronoQuill"> </div>
 
 ## Setup Instructions
 
-### 1. Create and Activate Conda Environment
 ```bash
-conda create --name chronoquill
-conda activate chronoquill
+git clone git@github.com:eth-library/ChronoQuill.git
+cd ChronoQuill
 ```
 
-### 2. Install Python Packages
+### Environment and Libraries
 ```bash
-conda install pip
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
-pip install google-genai
-pip install timm
-pip install dotenv
+uv venv chrono
+source chrono/bin/activate
+
+uv pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+uv pip install google-genai timm dotenv
 ```
 
-### 3. Environment Variables
+### Environment Variables
 Create a `.env` file in the project root and add your Gemini API key:
 ```
 GEMINI_API_KEY=your_api_key_here
 ```
 
-## Usage
-Provide .tif or .jpg files to the `data/` folder.
-
-Run ChronoQuill:
+### Classifier & Few-Shot Samples
+On the top level, populate the following folders.
 ```bash
-python chrono_quill.py
+# The classifier model:
+mkdir models && cd models/
+wget https://polybox.ethz.ch/index.php/s/Je9JEwST2drDp4K/download
+unzip download
+
+# Ground Truth samples for Few-Shot Learning:
+mkdir few_shot & cd few_shot/
+wget https://polybox.ethz.ch/index.php/s/5kSGRHYmz2m4tCE/download
+unzip download
+
+# Input/Output
+mkdir data
 ```
 
 ## Project Structure
@@ -49,14 +51,13 @@ python chrono_quill.py
 - `models/` — Pretrained model files
 - `data/` — Input and output data
 
-Our pretrained layout classifier and few-shot samples can be downloaded [here](tobeadded).
-
-## Requirements
-- Python 3.13
-- CUDA-enabled GPU (for Torch with cu128)
+## Transform TIFF & JPG into Markdown
+```bash
+python chrono_quill.py
+```
 
 ## License
-MIT
+Apache 2.0
 
 ## References
 - [Google GenAI](https://ai.google.dev/)
@@ -64,3 +65,13 @@ MIT
 
 ## Remarks
 The pipeline is specialized to process ETH's school council protocols. For different use cases, consider pretraining your own classifier and provide suitable grount truth for few-shot learning.
+
+## BibTeX
+```bash
+@article{marbach2026closed,
+  title={Closed-Vocabulary Multi-Label Indexing Pipeline for Historical Documents},
+  author={Marbach, Jeremy},
+  year={2026},
+  publisher={ETH Zurich}
+}
+```
