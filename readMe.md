@@ -57,7 +57,7 @@ python chrono_quill.py
 ```
 
 ## License
-Apache 2.0
+We release ChronoQuill under the Apache 2.0 license.
 
 ## References
 - [Google GenAI](https://ai.google.dev/)
@@ -66,12 +66,14 @@ Apache 2.0
 ## Remarks
 The pipeline is specialized to process ETH's school council protocols. For different use cases, consider pretraining your own classifier and provide suitable grount truth for few-shot learning.
 
-## BibTeX
+## Citation
+If you use this pipeline in your work, please cite:
 ```bash
 @article{marbach2026closed,
   title={Closed-Vocabulary Multi-Label Indexing Pipeline for Historical Documents},
   author={Marbach, Jeremy},
   year={2026},
-  publisher={ETH Zurich}
+  publisher={ETH Zurich},
+  url={https://www.research-collection.ethz.ch/server/api/core/bitstreams/8053d4d8-51b4-4103-8164-b5068ddb3903/content}
 }
 ```
