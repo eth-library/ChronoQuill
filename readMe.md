@@ -30,12 +30,12 @@ GEMINI_API_KEY=your_api_key_here
 On the top level, populate the following folders.
 ```bash
 # The classifier model:
+# In top folder Chronoquill/, execute:
 mkdir models && cd models/
-wget https://polybox.ethz.ch/index.php/s/Je9JEwST2drDp4K/download
-unzip download
+wget -O layout_classifier_model.pt "https://polybox.ethz.ch/index.php/s/Je9JEwST2drDp4K/download"
 
 # Ground Truth samples for Few-Shot Learning:
-mkdir few_shot && cd few_shot/
+# In top folder ChronoQuill/, execute:
 wget https://polybox.ethz.ch/index.php/s/5kSGRHYmz2m4tCE/download
 unzip download
 
