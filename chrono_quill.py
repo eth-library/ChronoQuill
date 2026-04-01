@@ -275,7 +275,7 @@ class ChronoQuill:
             image_bytes = f.read()
         return types.Part.from_bytes(data=image_bytes, mime_type='image/jpeg')
     
-    def _gemini_inference(self, system_prompt: str, prompt: str, model_id='gemini-2.5-flash-lite'):
+    def _gemini_inference(self, system_prompt: str, prompt: str, model_id='gemini-3-flash-preview'):
         """
         Calls Gemini with the specified prompts.
 
@@ -290,7 +290,9 @@ class ChronoQuill:
         return self.gemini_client.models.generate_content(
             model=model_id,
             config=types.GenerateContentConfig(
-                system_instruction=system_prompt),
+                system_instruction=system_prompt,
+                thinking_config=types.ThinkingConfig(thinking_level="low")
+            ),
             contents=prompt
         )
     
